@@ -16,7 +16,7 @@ bool ready = false;
 bool processed = false;
 bool waitingRoomFull = false;
 bool haircutdone = true;
-static const int num_threads = 10;
+static const int num_threads = 40;
 std::queue <int> q;
 //int i = 0;
 
@@ -28,7 +28,7 @@ std::queue <int> q;
 		cv.wait(lk, [] {return ready; });
 		
 		// after the wait, we own the lock.
-		std::cout << "Barber thread is awake";
+		//std::cout << "Barber thread is awake";
 		data += " after processing";
 
 		// Send data back to main()
